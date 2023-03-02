@@ -19,3 +19,7 @@ The idea is to create an access pattern for a file which can be used for evaluat
 4. Supply the start date and end date values to the gumble distribution generator to output the random samples that follow the gumble curve.
 5. Perform steps 2 to 4 for all 'n' samples.
 6. Concatenate all the distributions.
+
+## Sample access pattern
+Below access pattern graph is generated for a start_date=2023-02-27, end_date=2023-02-28, distribution_size=10000, max_peaks=10, min_sample_size=1000, max_sample_size=2500. The time axis is grouped in an interval of 5 mins.
+<img width="390" alt="image" src="https://user-images.githubusercontent.com/18122083/222304332-c97f7e3c-aded-48b2-9766-08a279da1725.png">
