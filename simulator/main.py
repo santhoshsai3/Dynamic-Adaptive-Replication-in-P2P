@@ -55,8 +55,8 @@ def generate_access_pattern():
     end = '2023-02-28T00:00:00'
     date_format = '%Y-%m-%dT%H:%M:%S'
 
-    t = generate_timestamps(start=start, end=end, date_format=date_format, distribution_size=10000,
-                            scale_ratio=0.1, max_peaks=10, min_samples=1000)
+    t = generate_timestamps(start=start, end=end, date_format=date_format, distribution_size=10000
+                            , max_peaks=10, min_sample_size=1000, max_sample_size=2500)
 
     f = [1 for x in range(len(t))]
     data = {"timestamps": t, "freq": f}
@@ -64,7 +64,7 @@ def generate_access_pattern():
     # Create DataFrame
     df = pd.DataFrame(data)
     df["timestamps"] = pd.to_datetime(df["timestamps"], unit='s')
-    df = df.resample('H', on='timestamps').sum()
+    df = df.resample('6H', on='timestamps').sum()
 
     print(df)
     df.plot()
